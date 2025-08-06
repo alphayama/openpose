@@ -1,5 +1,5 @@
 git submodule update --init --recursive --remote 
-apt install cmake libprotobuf-c-dev python3-protobuf libprotobuf23 libprotobuf-dev libgoogle-glog-dev 
+apt install cmake libprotobuf-c-dev python3-protobuf libprotobuf23 libprotobuf-dev libgoogle-glog-dev libopencv-dev
 mkdir build && cd build 
 cmake \
   -DOpenCV_CONFIG_FILE=/opt/opencv/build/OpenCVConfig.cmake \
