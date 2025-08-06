@@ -1,6 +1,6 @@
 # ------------------------- BODY, FOOT, FACE, AND HAND MODELS -------------------------
 # Downloading body pose (COCO and MPI), face and hand models
-OPENPOSE_URL="http://vcl.snu.ac.kr/OpenPose/models/"
+# OPENPOSE_URL="http://vcl.snu.ac.kr/OpenPose/models/"
 POSE_FOLDER="pose/"
 FACE_FOLDER="face/"
 HAND_FOLDER="hand/"
@@ -9,12 +9,14 @@ HAND_FOLDER="hand/"
 # Body (BODY_25)
 BODY_25_FOLDER=${POSE_FOLDER}"body_25/"
 BODY_25_MODEL=${BODY_25_FOLDER}"pose_iter_584000.caffemodel"
-wget -c ${OPENPOSE_URL}${BODY_25_MODEL} -P ${BODY_25_FOLDER}
+BODY_25_URL="https://www.dropbox.com/s/3x0xambj2rkyrap/pose_iter_584000.caffemodel"
+wget -c ${BODY_25_URL} -P ${BODY_25_FOLDER}
 
 # Body (COCO)
 COCO_FOLDER=${POSE_FOLDER}"coco/"
 COCO_MODEL=${COCO_FOLDER}"pose_iter_440000.caffemodel"
-wget -c ${OPENPOSE_URL}${COCO_MODEL} -P ${COCO_FOLDER}
+COCO_URL="https://github.com/foss-for-synopsys-dwc-arc-processors/synopsys-caffe-models/raw/master/caffe_models/openpose/caffe_model/pose_iter_440000.caffemodel"
+wget -c ${COCO_URL} -P ${COCO_FOLDER}
 # Alternative: it will not check whether file was fully downloaded
 # if [ ! -f $COCO_MODEL ]; then
 #     wget ${OPENPOSE_URL}$COCO_MODEL -P $COCO_FOLDER
@@ -23,14 +25,17 @@ wget -c ${OPENPOSE_URL}${COCO_MODEL} -P ${COCO_FOLDER}
 # Body (MPI)
 MPI_FOLDER=${POSE_FOLDER}"mpi/"
 MPI_MODEL=${MPI_FOLDER}"pose_iter_160000.caffemodel"
-wget -c ${OPENPOSE_URL}${MPI_MODEL} -P ${MPI_FOLDER}
+MPI_URL="https://huggingface.co/camenduru/openpose/resolve/f4a22b0e6fa2a4a2b1e2d50bd589e8bb11ebea7c/pose_iter_160000.caffemodel"
+wget -c ${MPI_URL} -P ${MPI_FOLDER}
 
 # "------------------------- FACE MODELS -------------------------"
 # Face
 FACE_MODEL=${FACE_FOLDER}"pose_iter_116000.caffemodel"
-wget -c ${OPENPOSE_URL}${FACE_MODEL} -P ${FACE_FOLDER}
+FACE_URL="https://www.dropbox.com/s/d08srojpvwnk252/pose_iter_116000.caffemodel"
+wget -c ${FACE_URL} -P ${FACE_FOLDER}
 
 # "------------------------- HAND MODELS -------------------------"
 # Hand
 HAND_MODEL=$HAND_FOLDER"pose_iter_102000.caffemodel"
-wget -c ${OPENPOSE_URL}${HAND_MODEL} -P ${HAND_FOLDER}
+HAND_URL="https://www.dropbox.com/s/gqgsme6sgoo0zxf/pose_iter_102000.caffemodel"
+wget -c ${FACE_URL} -P ${HAND_FOLDER}
